@@ -6,22 +6,43 @@ import Header from './components/header';
 import Popular from './components/popular';
 import Battle from './components/battle';
 import Winner from './components/winner.js';
+let root = document.getElementById(`root`);
 
 
 
-function App(props){
-    return(
-        <BrowserRouter>
-            <Header />
-            <Route path="/" exact>
-                <Popular />
-            </Route>
-            <Route path="/battle" exact>
-                <Battle />
-            </Route>
-            <Route path="/battle/results" component={Winner} />
-        </BrowserRouter>
-    )
+
+class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            color:false,
+        }
+    }
+    handleColorClick = () => {
+        // console.log("yes")
+        this.setState((prev) => {
+            return{
+                color: !prev.color,
+            }
+        },() => {
+            // console.log("inside")
+            root.classList.toggle(`bg-color`);
+        })
+    }
+    render(){
+        return(
+            <BrowserRouter>
+                <Header handleColorClick={ () => this.handleColorClick()} color={this.state.color} />
+                <Route path="/" exact>
+                    <Popular />
+                </Route>
+                <Route path="/battle" exact>
+                    <Battle />
+                </Route>
+                <Route path="/battle/results" component={Winner} />
+            </BrowserRouter>
+        )
+    }
 }
 
-ReactDOM.render(<App />,document.getElementById(`root`));
+ReactDOM.render(<App />,root);

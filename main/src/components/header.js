@@ -6,10 +6,7 @@ import {MdLightbulb,MdFlashlightOn} from 'react-icons/md';
 
 class Header extends React.Component {
     constructor(props){
-        super(props);
-        this.state = {
-            light: false,
-        }
+        super();
     }
     render(){
         return(
@@ -22,7 +19,7 @@ class Header extends React.Component {
                         <NavLink to="/battle" activeClassName='activ'  className="nav-link"  >Battle</NavLink>
                     </li>
                 </ul>
-                <div>{!this.state.light  ? <MdFlashlightOn  className='torch-off' /> : <MdLightbulb  className='torch-on' />}</div>
+                <div onClick={() => this.props.handleColorClick()}  >{!this.props.color  ? <MdFlashlightOn className='torch-off' /> : <MdLightbulb  className='torch-on' />}</div>
             </header>
         )
     }

@@ -46,14 +46,6 @@ class Battle extends React.Component {
                     isClickedOne: !prev.isClickedOne,
                 }
             })
-            /* fetch(`https://api.github.com/users/${this.state.playerOne}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data.avatar_url)
-            this.setState({
-                oneImg: data.avatar_url,
-            })
-        }) */
         }
         if(value === "two"){
             this.setState((prev) => {
@@ -61,14 +53,6 @@ class Battle extends React.Component {
                     isClickedTwo: !prev.isClickedTwo,
                 }
             })
-            /* fetch(`https://api.github.com/users/${this.state.playerTwo}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data.avatar_url)
-            this.setState({
-                twoImg: data.avatar_url,
-            })
-        }) */
         }
     }
     render(){

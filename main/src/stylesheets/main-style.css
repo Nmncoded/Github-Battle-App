@@ -129,15 +129,22 @@ table {
 }
 
 /* custom Styles */
-
-body {
-  padding: 24px;
+:root {
+  --color: 
 }
+
+.bg-color {
+  background-color: rgba(0,0,0,0.8) !important;
+}
+
 #root {
-  max-width: 1200px;
+  /* max-width: 1200px;
   width: 100%;
   margin: 56px auto;
-  border: 1px solid;
+  border: 1px solid; */
+  padding: 108px;
+  
+  
 }
 
 /* header */
@@ -162,6 +169,12 @@ body {
   text-decoration: none;
 }
 .torch-off {
+  font-size: 36px;
+  font-weight: 550;
+  color: gray;
+}
+.torch-on {
+  color: yellow;
   font-size: 36px;
   font-weight: 550;
 }
@@ -295,6 +308,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin: 48px 0 72px 0;
 }
 .users , .b-info , .winner {
@@ -302,6 +316,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  line-height: 1.4;
   align-items: center;
   margin: 0 36px;
 }
@@ -331,20 +347,33 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   margin: 36px 16px;
+}
+.player-one, .player-two {
+  margin-bottom: 16px;
 }
 
 .btl-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 16px;
+  font-size: 20px;
+  font-weight: 550;
+  border-radius: 8px;
+}
+.padding {
+  padding: 16px !important;
 }
 
 .p-two-input {
   display: flex;
 }
 .active-btn {
+  padding: 16px !important;
   display: none !important;
 }
 

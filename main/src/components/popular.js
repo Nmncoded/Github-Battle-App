@@ -32,11 +32,11 @@ class Popular extends React.Component {
         })
     }
     componentDidUpdate(){
-        console.log("updated");
+        // console.log("updated");
         
     }
     componentDidMount(){
-        console.log("mount");
+        // console.log("mount");
         fetch(`https://api.github.com/search/repositories?q=stars:%3E1+language:${this.state.languageName}&sort=stars&order=desc&type=Repositories`)
         .then(res => res.json())
         .then(data => {
